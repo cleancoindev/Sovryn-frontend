@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:=400,600,800&display=swap');
+
+.c-green {
+  color: rgb(23, 162, 183);
+}
+.c-primary-blue {
+  color: #17A2BD;
+}
+
+a {
+  text-decoration: none;
+  &.c-green {
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  &.c-primary-blue {
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}

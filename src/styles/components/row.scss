@@ -1,0 +1,21 @@
+$customGrey : #a7a9ac;
+
+.row {
+    color: $customGrey;
+    .row-data {
+        float: right;
+    }
+    .highlight {
+        color: white;
+    }
+}
+
+.row-results {
+    a {
+        color: white;
+        
+        &:visited {
+            color: white;
+        }
+    }
+}

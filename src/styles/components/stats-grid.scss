@@ -1,0 +1,425 @@
+$font-size-header: 0.75rem;
+$height-row: 80px;
+
+$width-col-name: 4.5rem;
+$width-col-total-tvl-usd: 9rem;
+$width-col-total-supply-usd: 9rem;
+$width-col-total-supply: 8rem;
+$width-col-total-borrow: 8rem;
+$width-col-liquidity: 8rem;
+$width-col-liquidity-reserved: 8rem;
+$width-col-supply-rate: 6rem;
+$width-col-borrow-rate: 10rem;
+
+$flex-col-name: 4.5;
+$flex-col-total-tvl-usd: 9;
+$flex-col-total-supply-usd: 9;
+$flex-col-total-supply: 8;
+$flex-col-total-borrow: 8;
+$flex-col-liquidity: 8;
+$flex-col-liquidity-reserved: 8;
+$flex-col-supply-rate: 6;
+$flex-col-borrow-rate: 8;
+
+$margin-left-column: 1rem;
+$margin-right-column: 1rem;
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+}
+
+.stats-grid-header {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+@mixin stats-grid-header__col {
+  height: 100%;
+
+  font-family: "Muli", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--trade-header-color);
+
+  &:not(:last-child) {
+    margin-right: $margin-right-column;
+  }
+
+  &:last-child {
+    display: grid;
+  }
+}
+.stats-grid-header__col-supply-rate{
+  .stats-grid-header__text {
+    white-space: nowrap;
+    overflow: inherit;
+    text-overflow: clip;
+  }
+}
+.stats-grid-header__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stats-grid-header__col-name {
+  @include stats-grid-header__col();
+
+  margin-left: $margin-left-column;
+  width: $width-col-name;
+  min-width: $width-col-name;
+  flex-grow: $flex-col-name;
+  flex-shrink: $flex-col-name;
+}
+
+.stats-grid-header__col-liquidity {
+  @include stats-grid-header__col();
+
+  width: $width-col-liquidity;
+  flex-grow: $flex-col-liquidity;
+  flex-shrink: $flex-col-liquidity;
+}
+
+.stats-grid-header__col-liquidity-reserved {
+  @include stats-grid-header__col();
+
+  width: $width-col-liquidity-reserved;
+  flex-grow: $flex-col-liquidity-reserved;
+  flex-shrink: $flex-col-liquidity-reserved;
+}
+
+.stats-grid-header__col-total-tvl-usd {
+  @include stats-grid-header__col();
+
+  width: $width-col-total-tvl-usd;
+  flex-grow: $flex-col-total-tvl-usd;
+  flex-shrink: $flex-col-total-tvl-usd;
+}
+
+.stats-grid-header__col-total-supply-usd {
+  @include stats-grid-header__col();
+
+  width: $width-col-total-supply-usd;
+  flex-grow: $flex-col-total-supply-usd;
+  flex-shrink: $flex-col-total-supply-usd;
+}
+
+.stats-grid-header__col-total-supply {
+  @include stats-grid-header__col();
+
+  width: $width-col-total-supply;
+  flex-grow: $flex-col-total-supply;
+  flex-shrink: $flex-col-total-supply;
+}
+
+.stats-grid-header__col-total-borrow {
+  @include stats-grid-header__col();
+
+  width: $width-col-total-borrow;
+  flex-grow: $flex-col-total-borrow;
+  flex-shrink: $flex-col-total-borrow;
+}
+
+.stats-grid-header__col-supply-rate {
+  @include stats-grid-header__col();
+
+  width: $width-col-supply-rate;
+  flex-grow: $flex-col-supply-rate;
+  flex-shrink: $flex-col-supply-rate;
+}
+
+.stats-grid-header__col-borrow-rate {
+  @include stats-grid-header__col();
+
+  width: $width-col-borrow-rate;
+  flex-grow: $flex-col-borrow-rate;
+  flex-shrink: $flex-col-borrow-rate;
+
+  margin-bottom: -10px;
+}
+
+.stats-grid-row {
+  display: flex;
+  flex-direction: row;
+
+  height: $height-row;
+  margin-bottom: 1px;
+
+  background-color: var(--primary-row);
+}
+
+@mixin stats-grid-row__col {
+  font-family: "Muli", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--trade-header-color);
+
+  text-overflow: ellipsis;
+
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-right: $margin-right-column;
+  }
+
+  .fw-800 {
+    font-weight: 800;
+  }
+  .color-primary {
+    color: var(--primary-text);
+  }
+}
+
+@mixin stats-grid-row__text-normal {
+  // color: #ffffff;
+}
+
+.stats-grid-row__col-name {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  margin-left: $margin-left-column;
+  width: $width-col-name;
+  min-width: $width-col-name;
+  flex-grow: $flex-col-name;
+  flex-shrink: $flex-col-name;
+
+  display: flex;
+  .stats-grid-row__image {
+    width: 28px;
+    display: flex;
+    align-items: center;
+    svg{
+      width: 28px;
+      height: 28px;
+      .eth-svg {
+        fill: #c8c8c8;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .stats-grid-row__asset-name {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    &.reserve-all {
+      margin-left: 38px;
+    }
+  }
+}
+
+.stats-grid-row__col-liquidity {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-liquidity;
+  flex-grow: $flex-col-liquidity;
+  flex-shrink: $flex-col-liquidity;
+}
+
+.stats-grid-row__col-liquidity-reserved {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-liquidity-reserved;
+  flex-grow: $flex-col-liquidity-reserved;
+  flex-shrink: $flex-col-liquidity-reserved;
+}
+
+.stats-grid-row__col-total-tvl-usd {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-total-tvl-usd;
+  flex-grow: $flex-col-total-tvl-usd;
+  flex-shrink: $flex-col-total-tvl-usd;
+}
+
+.stats-grid-row__col-total-supply-usd {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-total-supply-usd;
+  flex-grow: $flex-col-total-supply-usd;
+  flex-shrink: $flex-col-total-supply-usd;
+}
+
+.stats-grid-row__col-total-supply {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-total-supply;
+  flex-grow: $flex-col-total-supply;
+  flex-shrink: $flex-col-total-supply;
+}
+
+.stats-grid-row__col-total-borrow {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-total-borrow;
+  flex-grow: $flex-col-total-borrow;
+  flex-shrink: $flex-col-total-borrow;
+}
+
+.stats-grid-row__col-supply-rate {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  width: $width-col-supply-rate;
+  flex-grow: $flex-col-supply-rate;
+  flex-shrink: $flex-col-supply-rate;
+}
+
+.stats-grid-row__col-borrow-rate {
+  @include stats-grid-row__col();
+  @include stats-grid-row__text-normal();
+
+  margin-right: auto;
+  width: $width-col-borrow-rate;
+  flex-grow: $flex-col-borrow-rate;
+  flex-shrink: $flex-col-borrow-rate;
+}
+
+.stats-grid__header {
+  font-family: "Muli", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 140%;
+
+  color: var(--primary-text);
+}
+
+.stats-grid-card {
+  margin-bottom: 2px;
+  padding: 22px 18px;
+  background: var(--primary-row);
+
+  .stats-grid-card__info-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-grid-card__info-container-link {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    margin-bottom: 0.5rem;
+
+    cursor: pointer;
+  }
+
+  .stats-grid-card__info-container,
+  .stats-grid-card__info-container-link {
+    .stats-grid-card__image {
+      text-align: center;
+
+      img, svg {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        .eth-svg {
+          fill: #c8c8c8;
+        }
+      }
+    }
+    .stats-grid-row__col-name {
+      margin-left: 10px;
+      font-family: "Muli", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 150%;
+      /* or 27px */
+
+      display: flex;
+      align-items: center;
+
+      /* Main/White */
+
+      color: var(--primary-text);
+      &.reserve-all {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .stats-grid-card__details-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 12px;
+    > div {
+    }
+
+    .stats-grid-card__kv-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-family: "Muli", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 150%;
+      color: var(--trade-header-color);
+
+      .fw-800 {
+        font-weight: 800;
+      }
+      .color-primary {
+        color: var(--primary-text);
+      }
+
+      .stats-grid-card__kv-title {
+        font-size: 10px;
+
+        display: flex;
+        align-items: center;
+        &.borrow-title {
+          flex-direction: column;
+          line-height: 12px;
+          align-items: initial;
+        }
+      }
+
+      .stats-grid-card__kv-dots {
+        flex-grow: 1;
+
+        margin: 0 0.5rem;
+
+        background-image: url("../assets/images/margin_cell_border.png");
+        background-repeat: repeat-x;
+        background-position-y: 0.625rem;
+      }
+
+      .stats-grid-card__kv-value {
+        font-size: 16px;
+
+        display: flex;
+        align-items: center;
+
+        /* Main/White */
+      }
+    }
+  }
+}

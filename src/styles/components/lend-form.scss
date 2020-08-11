@@ -1,0 +1,334 @@
+.lend-form {
+  @include clearfix();
+
+  max-width: 575px;
+  width: 575px;
+  background-color: #444e5a;
+  display: flex;
+  flex-direction: row;
+
+  .close-icon {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+  &__info_block {
+    display: flex;
+    
+  }
+  &__group-button {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    button {
+      font-size: 12px;
+      font-weight: 600;
+      width: calc(25% - 1.5px);
+      padding: 8px 0;
+      color: #ffffff;
+      background-color: #586473;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      line-height: 1.5;
+      &:not(:last-child) {
+        margin-right: 2px;
+      }
+      &:hover {
+        background: #758295;
+      }
+    }
+  }
+}
+
+.lend-form__image {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  svg {
+    height: 90px;
+    width: 90px;
+    .eth-svg {
+      fill: #c8c8c8;
+    }
+  }
+}
+.lend-form__notification{
+  font-size: 11px;
+  font-weight: 600;
+  color: #586473;
+  @media screen and (min-width: $breakpoint-mobile-min){
+    position: absolute;
+    left: 13px;
+    bottom: 13px;
+  }
+}
+
+.lend-form__form-container {
+  padding: 55px 50px 30px 30px;
+}
+
+.lend-form__actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .lend-form__poweredBy {
+    position: absolute;
+    background: #29323d;
+    bottom: 0px;
+    right: 0px;
+    line-height: 2;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #a9b5c7;
+    background-color: #444e5a;
+    width: 11.3rem;
+    height: 1.7rem;
+
+    &--link {
+      cursor: pointer;
+      text-decoration: underline;
+      line-height: 2;
+      font-size: 0.75rem;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      color: #a9b5c7;
+      background-color: #444e5a;
+    }
+  }
+}
+
+.lend-form__kv-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 15px;
+  &.jc-fe{
+    justify-content: flex-end;
+  }
+}
+
+.lend-form__token-message-container {
+  margin-bottom: 5px;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  color: #ffffff;
+  max-width: 245px;
+}
+
+.lend-form__token-message-container--message {
+  font-size: 0.75rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.lend-form__label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  color: #a2abb8;
+}
+
+.lend-form__label--action {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  border: 0 none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.lend-form__value {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 150%;
+  color: #ffe352;
+
+  &--no-color {
+    color: #a2abb8;
+  }
+  &.lend-estimate {
+    color: #a2abb8;
+    font-weight: 600;
+  }
+}
+
+.lend-form__amount-message {
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  color: #fe7272;
+  margin-bottom: 10px;
+}
+
+.lend-form__amount-container {
+  display: flex;
+  background: #394049;
+  width: 100%;
+  height: 65px;
+  position: relative;
+  padding-right: 15px;
+  align-items: center;
+  box-sizing: border-box;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border: 16px solid transparent;
+    border-left: 16px solid #ffffff;
+    left: -31px;
+    top: 50%;
+    transform: translate(0, -50%);
+    bottom: 0;
+    width: 16px;
+    height: 32px;
+    box-sizing: border-box;
+  }
+
+  .lend-form__amount-input {
+    padding-left: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+    background-color: #394049;
+    border: none;
+    font-size: 32px;
+    padding-left: 15px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .lend-form__amount-max {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    width: 4rem;
+    padding: 0.5rem;
+
+    border: 0;
+    border-left: 1px solid #444e5a;
+
+    background-color: rgba(32, 31, 35, 0.3);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+
+    cursor: pointer;
+  }
+
+  .lend-form__amount-maxed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    width: 4rem;
+    padding: 0.5rem;
+
+    border: 0;
+    border-left: 1px solid #444e5a;
+
+    background-color: rgba(32, 31, 35, 0.3);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00ff00;
+
+    cursor: pointer;
+  }
+}
+
+.rounded-mark {
+  font-size: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100px;
+  padding: 0.0625rem 0.3125rem;
+}
+
+.lend-form__submit-button {
+  display: flex;
+
+  cursor: pointer;
+  border: 0;
+  padding: 12px 25px;
+  border-radius: 40px;
+  color: #ffffff;
+  text-transform: uppercase;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  &--lend {
+    background: rgb(66, 182, 185);
+    &:hover {
+      background-color: #33dfcc;
+    }
+  }
+
+  &--un-lend {
+    background: #ff4f4f;
+    &:hover {
+      background-color: #fe7272;
+    }
+  }
+}
+hr {
+  border: none;
+  color: #fff;
+  flex: 3;
+  align-self: flex-end;
+  border-top: 2px dotted rgba(162, 171, 184, 0.5);
+  height: 3px;
+  margin: 0 4px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
